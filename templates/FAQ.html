@@ -1,0 +1,124 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rent & Resident</title>
+
+    <!-- fontawesome -->
+    <script src="https://kit.fontawesome.com/82d4e6f3ab.js" crossorigin="anonymous"></script>
+
+    <!-- style sheets -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/FAQ styles.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+ 
+    <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+    
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/bootstrap-datepicker.css' %}">
+    <link rel="stylesheet" href="{% static 'css/jquery.timepicker.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/flaticon.css' %}">
+    <link rel="stylesheet" href="{% static 'css/stylebooking.css' %}">
+
+    <!-- bootstrap javascripts -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <section>
+        <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+            <div class="container">
+                <a class="navbar-brand" href="/"><span>Rent</span>and<span>Resident</span></a>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="fa fa-bars"></span> Menu
+              </button>
+              <div class="collapse navbar-collapse" id="ftco-nav">
+                <ul class="navbar-nav ml-auto">
+                        <li class="nav-item ">
+                            <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="login">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="register">Register</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">FAQs</a>
+                        </li>
+                    </ul>
+                </div>
+              </div>
+            </nav>
+    </section>
+
+
+    <div class="hero-wrap js-fullheight" style="background-image: url('static/images/intro.jpg');" data-stellar-background-ratio="0.5">
+      <div class="overlay"></div>
+      <div class="container">
+      
+    <div class="faq-div">
+        <h1>Frequently Asked Questions </h1>
+        <p>Q1- Why choose rent and residence? <br> Ans- Rent and Residence searches through thousands of homes and brings to you the best rooms or homes for you which suit to your needs. </p>
+        <br>
+        <p>Q2- Why list your rooms here?<br> Ans- The 20 million+ users which form our userbase frequently look for their ideal rooms and it will not take much time for you to have a new tenant.</p>
+        <br>
+        <p>Q3- How do i get started as a home owner here?<br> Ans- If you are a new user just click on the register button on the home page and follow the instructions.Its that simple!!</p>
+        <br>
+        <p>Q4- As a tenant is it safe to look for homes here?<br> Ans- Rent and residence is one of the safest websites to look for rooms.Our experts continuesly check for the validity of the homes.Your safety is our priority. </p>
+    </div>
+
+</div>
+</div>
+
+    <section id="get-in-touch">
+        <div class="touch">
+            <h3>GET IN TOUCH WITH US</h3>
+            <form class="form" method="post" action="feedback">
+                {% csrf_token %}
+                <div class="row">
+                    <div class="col-lg-4 form-group">
+                        <input type="name" class="form-control" name="name" placeholder="Your Name">
+                    </div>
+                    <div class="col-lg-4 form-group">
+                        <input type="email" class="form-control" name="email" placeholder="Your Email">
+                    </div>
+                    <div class="col-lg-4 form-group">
+                        <input type="text" class="form-control" name="subject" placeholder="Subject">
+                    </div>
+                    <div class="col-lg-12 form-group">
+                        <textarea name="message" class="form-control" placeholder="Your message" id="" cols="30" rows="5"></textarea>
+                    </div>
+                </div>
+                <button  type="submit"  class="btn btn-primary btn-lg">SUBMIT</button>
+            </form>
+           
+        </div>
+    </section>
+
+
+
+    <section id="footer">
+        <div class="container-fluid footer">
+            <a href=""><i class="footer-icon fab fa-twitter " aria-hidden="true"></i></a>
+            <a href=""><i class="footer-icon fab fa-facebook-f" aria-hidden="true"></i></a>
+            <a href=""><i class="footer-icon fab fa-instagram" aria-hidden="true"></i></a>
+            <a href=""><i class="footer-icon fas fa-envelope" aria-hidden="true"></i></a>
+        </div>
+    </section>
+
+</body>
+
+
+</html>

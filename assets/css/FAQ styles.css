@@ -1,0 +1,107 @@
+body {
+    padding: 0;
+    height: 100%;
+    background-attachment: fixed;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("images/bgimage.jpg");
+}
+
+h1 {
+    padding: 5%;
+}
+
+p {
+    padding: 0 5%;
+}
+
+.btn {
+    margin: 5%;
+}
+
+
+/* navigation bar section */
+
+.navbar-light {
+    background-color: #fff;
+}
+
+.mainnav {
+    padding: 0;
+}
+
+.navbar-brand {
+    padding: 0;
+    color: whitesmoke;
+}
+
+.navbar-brand:hover,
+.nav-link:hover {
+    color: goldenrod;
+}
+
+.nav-link {
+    color: whitesmoke;
+}
+
+.navbar-toggler,
+.custom-toggler {
+    border-color: whitesmoke;
+    border-width: 2px;
+}
+
+.navbar-toggler:hover {
+    border-color: goldenrod;
+}
+
+.fa-bars:hover {
+    color: goldenrod;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;..");
+}
+
+
+/* faq-div */
+
+.faq-div {
+    position: relative;
+    padding: 7% 5%;
+    height: 100%;
+    margin: 0 15%;
+    background-color: #dfdfdf;
+}
+
+
+/* get in touch */
+
+.touch {
+    text-align: center;
+    padding: 3rem 15%;
+}
+
+h3 {
+    color: #fff;
+}
+
+.form {
+    padding: 7% 15%;
+}
+
+
+/* footer */
+
+.footer {
+    background-color: #272343;
+    padding: 7% 15%;
+    text-align: center;
+}
+
+.footer-icon {
+    color: #fff;
+    margin: 1rem;
+}
+
+.footer-icon:hover {
+    transform: scale(1.3);
+    color: #e3f6f5;
+}

@@ -1,0 +1,309 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rent & Resident</title>
+    <script src="https://kit.fontawesome.com/82d4e6f3ab.js" crossorigin="anonymous"></script> 
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/stylefaq.css' %}">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</head>
+<body>
+    <section>
+        <div class="mainnav">
+            <nav class="navbar navbar-expand-lg ">
+                <a class="navbar-brand" href="#">RentandResident</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"><i class="fas fa-bars" style="color:#fff; font-size:28px;"></i></span>
+      </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="">Home <span class="sr-only">(current)</span></a>
+                        </li>
+                        {% if  user.is_authenticated %}
+                       <li><span><a href="#" class=nav-link>Hello,{{user.username}}</a></span></li>
+                        <li><a class="nav-link" href="logout">LOGOUT</a></li>
+                        {% else %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="login">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="register">Register</a>
+                        </li>
+                        {% endif %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="FAQ" tabindex="-1" aria-disabled="true">FAQs</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about" tabindex="-1" aria-disabled="true">AboutUs</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </section>
+    <section id="intro">
+        <div>
+            <h1>WELCOME TO RENT AND RESIDENT</h1><br>
+            <h1>
+                RENT AN APARTMENT FOR  FAMILIES,FRIENDS AND FOR AN INDIVIDUAL.<br>
+                Be home, be comfortable & let us know your requirements so we can get back to you.
+            </h1><br>
+        </div>
+    </section>
+
+    <section id="choice">
+        <div class="choice-div">
+            <h2>Choose one or both!</h2><br>
+            <div class="row ">
+
+
+                <div class="col-lg-6 sell">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4>RENT YOUR HOUSE/ROOM</h4>
+                        </div>
+                        <div class="card-body">
+                            <img class="sell-img" src="{% static 'images/exterior.png' %}" alt="">
+                            <form action="booking"><button class="btn btn-lg btn-outline-dark">Click Here</button></form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 buy">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4>GET HOUSE/ROOMS ON RENT</h4>
+                        </div>
+                        <div class="card-body">
+                            <img class="buy-img" src="{% static 'images/interior.png' %}" alt="">
+                        <form action="rent">    <button class="btn btn-lg btn-outline-dark">Click Here</button></form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+        </div>
+    </section>
+
+
+    <section id="for-every-one">
+        <div class="row for-every">
+            <div class="col-lg-3">
+                <h2 class="every-one-heading">DESIGNED FOR EVERYONE</h2>
+            </div>
+            <div class="col-lg-3">
+                <h4>FOR FAMILIES</h4>
+                <img class="for-every-images" src="{% static 'images/family.png' %}" alt=""><br>
+                <p class="for-every-para">Rent a beautiful house for your family. Choose from flats in societies, individual apartments, bunglows and villas.</p>
+                <form action="booking"><button class="btn btn-outline-dark">Explore</button></form>
+            </div>
+            <div class="col-lg-3">
+                <h4>FOR FRIENDS</h4>
+                <img class="for-every-images" src="{% static 'images/friends.png' %}" alt=""><br>
+                <p class="for-every-para">Rent a bachelor friendly house with your friends. Choose from flats in societies, individual apartments, bungalows &amp; villas.</p>
+               <form action="booking"> <button class="btn btn-outline-dark">Explore</button></form>
+
+            </div>
+            <div class="col-lg-3">
+                <h4>FOR INDIVIDUALS</h4>
+                <img class="for-every-images" src="{% static 'images/individual.png' %}" alt=""><br>
+                <p class="for-every-para">Rent a shared room or private room for yourself. Choose fron flats in societies & individual apartments.</p>
+                <form action="booking"><button class="btn btn-outline-dark">Explore</button></form>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="features">
+        <div class="features-div">
+            <h2>BENEFITS OF TRUSTING US</h2>
+            <div class="row features-row">
+                <div class="col-sm-3">
+                    <p><i class="fas fa-phone fa-4x"></i><br>Contact your clients directly</p>
+                </div>
+                <div class="col-sm-3">
+                    <p><i class="fa fa-cog fa-spin fa-4x fa-fw"></i><br>24X7 In your service </p>
+                </div>
+                <div class="col-sm-3">
+                    <p><i class="fa fa-address-card fa-4x"></i><br>Maintain Privacy of Users</p>
+                </div>
+                <div class="col-sm-3">
+                    <p><i class="fa fa-street-view fa-4x"></i><br>Have More than 2500+ Happy Users</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="partners">
+
+        <div class="partners-div"><br><br>
+            <div class="our-clients">
+                <h3>Our Corporate Partners</h3>
+            </div>
+            <div class="client-list">
+                <div data-scrollreveal="enter right move 60px after 0.00s over 2.5s">
+                    <a href=""><img src="{% static 'images/NHS-Logo.png' %}" alt="Client"></a>
+                    <a href=""><img src="{% static 'images/ford.png' %}" alt="Client"></a>
+                    <a href=""><img src="{% static 'images/twitter.png' %}" alt="Client"></a>
+                    <a href=""><img src="{% static 'images/amazon-logo.png' %}" alt="Client"></a>
+                    <a href=""><img src="{% static 'images/google-developers.png' %}" alt="Client"></a>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <section id="home-owner">
+        <div class="row home-owner">
+            <div class="col-lg-3">
+                <h2 class="home-owner-heading">Are you a home owner?</h2>
+                <button class="btn btn-outline-dark">List your property</button>
+            </div>
+            <div class="col-lg-3">
+                <h4>Find verifies tenants</h4>
+                <p class="home-owner-para">From showing your house to tenants, police verifying them and managing paperworks we do it all</p>
+            </div>
+            <div class="col-lg-3">
+                <h4>Get rent on time</h4>
+                <p class="home-owner-para">We assure you rent on a single date. No more late payments!</p>
+
+            </div>
+            <div class="col-lg-3">
+                <h4>Get house maintenance</h4>
+                <p class="home-owner-para">We provide periodic repairs to your houses.</p>
+
+            </div>
+        </div>
+
+    </section>
+
+
+    <section id="testimonials">
+
+        <div id="testimonial-carousal" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#testimonial-carousal" data-slide-to="0" class="active"></li>
+                <li data-target="#testimonial-carousal" data-slide-to="1"></li>
+                <li data-target="#testimonial-carousal" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="row testimonial-container">
+                        <div class="col-lg-3">
+                            <img src="{% static 'images/Paresh.jpg' %}" class="d-block w-100" alt="man2">
+                            <h5 align="center">Baburao ganpatrao apte</h5>
+                        </div>
+                        <div class="col-lg-9">
+
+                            <h4 class="apos">’’</h4>
+                            <p class="say">To get an extended overview of a hotel property, rent&resident.com shows the average rating and extensive reviews from other booking sites.</p>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="row testimonial-container">
+                        <div class="col-lg-3">
+                            <img src="{% static 'images/kareena.jpg' %}" class="d-block w-100" alt="man1">
+                            <h5 align="center">kareena kapoor</h5>
+                        </div>
+                        <div class="col-lg-9">
+
+                            <h4 class="apos">’’</h4>
+                            <p class="say">I think Rent&Resident.com will usually have the best price (not always, but usually). But the biggest difference is the user experience – for repeat customers, it’s so much easier to use a booking site Rent&Resident.com..</p>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="row testimonial-container">
+                        <div class="col-lg-3">
+                            <img src="{% static 'images/Sara.jpg' %}" class="d-block w-100" alt="man3">
+                            <h5 align="center">sara ali khan</h5>
+                        </div>
+                        <div class="col-lg-9">
+
+                            <h4 class="apos">’’</h4>
+                            <p class="say">The houses themselves set cancellation policies for bookings, so one site doesn’t necessarily differ from another. Anecdotally, I have canceled dozens (maybe into the hundreds) of houses through Rent&Resident.com and I’ve never had a problem. It’s always been one or two clicks and very easy.</p>
+
+                        </div>
+                    </div>
+                </div>
+                {% for comment in comments%}
+                <div class="carousel-item">
+                    <div class="row testimonial-container">
+                        <div class="col-lg-3">
+                            <img src="{% static 'images/user.png' %}" class="d-block w-100" alt="man3">
+                            <h5 align="center">{{comment.name}}</h5>
+                        </div>
+                        <div class="col-lg-9">
+
+                            <h4 class="apos">’’</h4>
+                            <p class="say">{{comment.message}}</p>
+
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            <a class="carousel-control-prev" href="#testimonial-carousal" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#testimonial-carousal" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+
+    </section>
+
+
+    <section id="get-in-touch">
+        <div class="touch">
+            <h3>GET IN TOUCH WITH US</h3>
+            <form class="form " method="post"  action="feedback">
+                {% csrf_token %}
+                <div class="row">
+                    <div class="col-lg-4 form-group">
+                        <input type="name" class="form-control" name="name" placeholder="Your Name">
+                    </div>
+                    <div class="col-lg-4 form-group">
+                        <input type="email" class="form-control" name="email" placeholder="Your Email">
+                    </div>
+                    <div class="col-lg-4 form-group">
+                        <input type="text" class="form-control" name="subject" placeholder="Subject">
+                    </div>
+                    <div class="col-lg-12 form-group">
+                        <textarea name="message" class="form-control" placeholder="Your message" id="" cols="30" rows="5"></textarea>
+                    </div>
+                </div>
+                <button  type="submit" class="btn btn-primary btn-lg">SUBMIT</button>
+            </form>
+        </div>
+    </section>
+
+
+
+    <section id="footer">
+        <div class="container-fluid footer">
+            <a href=""><i class="footer-icon fab fa-twitter " aria-hidden="true"></i></a>
+            <a href=""><i class="footer-icon fab fa-facebook-f" aria-hidden="true"></i></a>
+            <a href=""><i class="footer-icon fab fa-instagram" aria-hidden="true"></i></a>
+            <a href=""><i class="footer-icon fas fa-envelope" aria-hidden="true"></i></a>
+        </div>
+    </section>
+</body>
+
+</html>

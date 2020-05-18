@@ -1,0 +1,161 @@
+{%load static %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            findyourtype
+        </title>
+       
+     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"> 
+<link href="search-filter.css" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>  
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<link rel="stylesheet" href="{% static 'css/rent2.css' %}">
+    </head>
+    <body>
+
+
+      <section>
+        <div class="mainnav">
+            <nav class="navbar navbar-expand-lg ">
+                <a class="navbar-brand" href="#">RentandResident</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"><i class="fas fa-bars" style="color:#fff; font-size:28px;"></i></span>
+      </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="">Home <span class="sr-only">(current)</span></a>
+                        </li>
+                        {% if  user.is_authenticated %}
+                       <li><span><a href="#" class=nav-link>Hello,{{user.username}}</a></span></li>
+                        <li><a class="nav-link" href="logout">LOGOUT</a></li>
+                        {% else %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="login">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="register">Register</a>
+                        </li>
+                        {% endif %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="FAQ" tabindex="-1" aria-disabled="true">FAQs</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about" tabindex="-1" aria-disabled="true">AboutUs</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </section>
+
+
+
+
+<form method="post" action="rent2" class="dd">
+    {% csrf_token %}
+    <div class="container1">
+<div class="active-pink-3 active-pink-4 mb-4">
+    <input class="form-control" type="text" placeholder="location" aria-label="Search">
+  </div>
+  <div class="active-purple-3 active-purple-4 mb-4">
+    <input class="form-control" type="text" placeholder="when do you want to start living there!" aria-label="Search">
+  </div>
+  <div class="active-cyan-3 active-cyan-4 mb-4">
+    <input class="form-control" type="text" placeholder="individual or family" aria-label="Search">
+  </div>
+  <div class="active-pink-3 active-pink-4 mb-4">
+    <input class="form-control" type="text" placeholder="price you are expecting" aria-label="Search">
+  </div>
+  <div class="forsubmit">
+  <input type="submit" value ="GO" >
+</div>
+</div>
+<div class=dynamic>
+
+</div>
+
+
+
+
+
+
+{% for q2 in q %}
+
+
+<main class="container">
+ 
+    <!-- Left Column / Headphones Image -->
+    <div class="left-column">
+      <img data-image="red" class="active" src="red.png" alt="">
+    </div>
+   
+   
+    <!-- Right Column -->
+    <div class="right-column">
+   
+      <!-- Product Description -->
+      <div class="product-description">
+        <span>{{q2.phonenumber}}</span>
+        <h4>{{q2.houselocation}}, {{q2.localitylocation}}, {{q2.citylocation}}</h4><br>
+        <p>{{q2.roomdescription}}</p>
+        
+      </div>
+   
+      <!-- Product Configuration -->
+      <div class="product-configuration">
+   
+        <!-- Product Color -->
+        <div class="product-color">
+          <span>You can start living there from {{q2.From}}<br><br><br>decription of tenant expecting</span>
+   
+          <div class="color-choose">
+           <p>{{q2.tenantdescription}}</p>
+          </div>
+   
+        </div>
+   
+        <!-- Cable Configuration -->
+        <div class="cable-config">
+          <span>allowance upto</span>
+   
+          <div class="cable-choose">
+            <button>{{q2.children}} childrens</button>
+            <button>{{q2.adults}} adults</button>
+            
+          </div>
+   
+          <a href="#">want some more information</a>
+        </div>
+      </div>
+   
+      <!-- Product Pricing -->
+      <div class="product-price">
+        <span>{{q2.price}}$</span>
+        <a href="#" class="cart-btn">Add to liked one's</a>
+      </div>
+    </div>
+    
+  </main>
+
+{% endfor %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</form>
+</html>

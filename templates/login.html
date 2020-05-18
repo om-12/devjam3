@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+    <title>Document</title>
+</head>
+<body>
+<div class="ddd">
+    <div class="container">
+        <div class="tabs">
+            <ul><li id="login"><h2>Login....</h2></li>
+            </ul>
+        </div>
+        <div class="forms">
+        <div class="flex-container">
+            <p>SignIn in your account.</p>
+        
+            <form method="post" action="login">
+                {% csrf_token %}
+                <input class="field" name="username" required type="text" placeholder="username" /><br>
+                <input class="field" name="password" required type="password"  placeholder="* Password" /><br>
+                <input type="checkbox" name="terms"> <em>Keep me logged in </em><br> <input type="submit" class ="aa"value="Login" /><br>
+                
+            </form>
+        </div>
+        </div>
+        <div>
+            <h3>
+                {% for message in messages %}
+                {{message}}
+                {% endfor %}
+            </h3>
+        </div>
+
+</div>
+</body>
+</html>
